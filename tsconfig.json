@@ -1,40 +1,26 @@
 {
   "extends": "./tsconfig.paths.json",
   "compilerOptions": {
-    "allowJs": true,
-    "allowUnreachableCode": false,
-    "noFallthroughCasesInSwitch": true,
-    "allowSyntheticDefaultImports": true,
-    "downlevelIteration": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "jsx": "react-jsx",
+    "target": "ESNext",
     "lib": [
-      "es6",
-      "es2015",
-      "es2017",
       "dom",
-      "DOM",
-      "DOM.Iterable",
-      "ESNext"
+      "dom.iterable",
+      "esnext"
     ],
-    "module": "esnext",
-    "moduleResolution": "Node",
-    "noImplicitAny": true,
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "noUnusedLocals": false,
-    "sourceMap": true,
-    "strictNullChecks": true,
+    "types": ["vite/client"],
+    "allowJs": false,
+    "skipLibCheck": false,
+    "esModuleInterop": false,
+    "allowSyntheticDefaultImports": true,
     "strict": true,
-    "pretty": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "target": "esnext",
-    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "types": ["node"]
+    "jsx": "react-jsx"
   },
   "include": [
     "src"

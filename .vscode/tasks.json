@@ -1,0 +1,30 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "pnpm run dev",
+      "type": "shell",
+      "command": "pnpm dev",
+      "presentation": {
+        "group": "Dev server",
+        "panel": "dedicated"
+      },
+      // "runOptions": {
+      //   "runOn": "folderOpen"
+      // }
+    },
+    {
+      "label": "pnpm run ts-watch",
+      "type": "shell",
+      "command": "pnpm ts-check",
+      "problemMatcher": "$tsc-watch",
+      "presentation": {
+        "group": "Dev server",
+        "panel": "dedicated"
+      },
+      // "runOptions": {
+      //   "runOn": "folderOpen"
+      // }
+    }
+  ]
+}
