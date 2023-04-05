@@ -2,12 +2,14 @@ import { defineConfig } from 'vite';
 import reactSWCPlugin from '@vitejs/plugin-react-swc';
 import eslintPlugin from 'vite-plugin-eslint';
 import svgrPlugin from 'vite-plugin-svgr';
+import viteTsconfigPathsPlugin from 'vite-tsconfig-paths';
 import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     reactSWCPlugin(),
+    viteTsconfigPathsPlugin(),
     eslintPlugin({
       extensions: [
         ".ts",
@@ -16,9 +18,11 @@ export default defineConfig({
     }),
     // Allows to import svg as react component
     svgrPlugin({
+      exportAsDefault: true,
       svgrOptions: {
-        icon: true,
+        icon: false,
       },
+      include: '**/*.svg',
     }),
   ],
   server: {

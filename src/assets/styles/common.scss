@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+
+}
+
+button {
+  background: none;
+  border: none;
+  color: white;
+}
+
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+li,
+button,
+input,
+b {
+  font-family: 'Roboto', sans-serif;
+  color: #F1F1F1
+}
+
+a {
+  font-size: 16px;
+  text-decoration: none;
+  color: #52ABFC;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

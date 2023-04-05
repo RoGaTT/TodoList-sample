@@ -1,15 +1,23 @@
 {
   "extends": "./tsconfig.paths.json",
+  "files": [
+    "src/types/lib/svgr.d.ts"
+  ],
   "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist",
     "target": "ESNext",
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
-    "types": ["vite/client"],
+    "types": [
+      "vite/client"
+    ],
+    "declaration": true,
     "allowJs": false,
-    "skipLibCheck": false,
+    "skipLibCheck": true,
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
     "strict": true,

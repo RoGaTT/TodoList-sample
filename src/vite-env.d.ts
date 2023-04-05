@@ -1,2 +1,4 @@
 /// <reference types="vite/client" />
-/// <reference types="vite-plugin-svgr/client" />
+/// <reference path="./types/lib/svgr.d.ts" />
+
+import './types/lib/svgr.d.ts';

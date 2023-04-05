@@ -30,7 +30,8 @@
         ]
       }
     ],
-    "no-undef": "error"
+    "no-undef": "error",
+    "import/prefer-default-export": "off"
   },
   "overrides": [
     {
@@ -56,9 +57,9 @@
         "import/no-unresolved": "off",
         "import/extensions": "off",
         "max-len": [
-          "error",
+          "warn",
           {
-            "code": 120,
+            "code": 160,
             "ignoreComments": true,
             "ignoreTrailingComments": true,
             "ignoreUrls": true,
@@ -123,7 +124,9 @@
             "namedComponents": "arrow-function",
             "unnamedComponents": "arrow-function"
           }
-        ]
+        ],
+        "react/jsx-props-no-spreading": "warn",
+        "react/require-default-props": "warn"
       }
     },
     {
@@ -138,16 +141,21 @@
             "allowHigherOrderFunctions": true
           }
         ],
+        "@typescript-eslint/triple-slash-reference": [
+          "warn",
+          {
+            "lib": "always",
+            "path": "never",
+            "types": "prefer-import"
+          }
+        ]
       }
     },
     {
       "files": [
         "index.ts",
         "index.tsx"
-      ],
-      "rules": {
-        "import/prefer-default-export": "off"
-      }
+      ]
     },
     {
       "files": [
@@ -165,5 +173,8 @@
         "import/no-extraneous-dependencies": "off"
       }
     }
-  ]
+  ],
+  "globals": {
+    "JSX": "readonly"
+  }
 }

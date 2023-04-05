@@ -1,35 +1,26 @@
 import React, { useMemo, useState } from 'react';
-import AuthContext, { AuthType } from '@/context/auth.context';
-import ToDoListContext from '@/context/todo-list.context';
+import { UserProvider, useUser } from '@/context/user.context';
+import { TodoListProvider } from '@/context/todo-list.context';
 import classes from './Layout.module.scss';
 import Header from '../Header';
-import { TodoItemType } from '@/types/todo.type';
+import { TodoType } from '@/types/todo.type';
+import { UserType } from '@/types/user.type';
+import { DatabaseProvider } from '@/context/database.context';
 
 const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
-  const [auth, setAuth] = useState<AuthType>();
-  const [todoList, setTodoList] = useState<TodoItemType[]>([]);
+  const { user } = useUser();
 
-  const memoAuthContextValue = useMemo(() => ({
-    auth,
-    setAuth,
-  }), [auth]);
-
-  const memoTodoListContextValue = useMemo(() => ({
-    todoList,
-    setTodoList,
-  }), [todoList]);
+  console.log(user);
 
   return (
-    <AuthContext.Provider value={memoAuthContextValue}>
-      <ToDoListContext.Provider value={memoTodoListContextValue}>
-        <div className={classes.root}>
-          <Header />
-          <div className={classes.content}>
-            {children}
-          </div>
-        </div>
-      </ToDoListContext.Provider>
-    </AuthContext.Provider>
+
+    <div className={classes.root}>
+      {user && <Header />}
+      <div className={classes.content}>
+        {children}
+      </div>
+    </div>
+
   );
 };
 

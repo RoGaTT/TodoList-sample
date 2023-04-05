@@ -1,0 +1,84 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 16px;
+  padding-left: 24px;
+  margin-bottom: 24px;
+  border-radius: 20px;
+  border: 1px solid #2C9683;
+  width: 100%;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+
+  &-content {
+    padding-top: 4px;
+    flex-basis: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+
+    &>div {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      padding-right: 16px;
+      padding-bottom: 10px;
+      font-size: 18px;
+
+      &>span {
+        color: #2C9683;
+        text-transform: capitalize;
+        text-decoration: underline;
+        font-style: italic;
+      }
+
+      &>b {
+        font-size: 18px;
+      }
+    }
+
+    &>textarea {
+      margin-top: 24px;
+      font-size: 14px;
+      background-color: transparent;
+      width: 100%;
+      color: white;
+      padding: 16px;
+      border-radius: 8px;
+    }
+  }
+
+  &-controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-left: 1px solid grey;
+    padding-left: 16px;
+
+    &>button {
+      margin: 4px;
+    }
+  }
+}
+
+.list {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
