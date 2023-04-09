@@ -63,13 +63,17 @@ const TodoItem: React.FC<PropsType> = ({ data, level = 0 }) => {
           </button>
         </div>
       </div>
-      <div className={classes.list}>
-        {
-          isListOpen && data.items.map((innerTodo) => (
-            <TodoItem key={data._id} data={innerTodo} level={innerTodo.level || level + 1} />
-          ))
-        }
-      </div>
+      {
+        isListOpen && (
+          <div className={classes.list}>
+            {
+              data.items.map((innerTodo) => (
+                <TodoItem key={data._id} data={innerTodo} level={innerTodo.level || level + 1} />
+              ))
+            }
+          </div>
+        )
+      }
     </div>
   );
 };

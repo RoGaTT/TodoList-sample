@@ -9,6 +9,7 @@ import ROUTES_CONFIG, { RouteEnum } from '@/const/routes.config';
 import { useUser } from '@/context/user.context';
 import { useApi } from '@/api';
 import { UserType } from '@/types/user.type';
+import App from '@/App';
 
 const SignIn = () => {
   const { user, setUser } = useUser();

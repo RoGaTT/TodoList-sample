@@ -94,6 +94,7 @@ export const useApi = () => {
   const updateTodoById = (todoId: ID, data: { text: string }): TodoModel | undefined => {
     const existingTodo = getTodoById(todoId);
     if (!existingTodo) return undefined;
+    if (data.text === existingTodo.text) return existingTodo;
 
     const newData: TodoModel = {
       ...existingTodo,
