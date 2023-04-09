@@ -22,7 +22,7 @@ const Container: FC<PropsType> = ({
   }, [setRef]);
 
   return (
-    <div {...(id ? { id } : {})} ref={ref} className={clsx(classes.root, wrapperClassName)}>
+    <div id={id} ref={ref} className={clsx(classes.root, wrapperClassName)}>
       <div className={clsx(classes.content, className)}>
         {children}
       </div>

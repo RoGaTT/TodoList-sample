@@ -63,7 +63,6 @@ export const useApi = () => {
       updatedAt: new Date(),
       author: user._id,
       items: [],
-      level: data.level,
       history: [{
         author: user._id,
         createdAt: new Date(),
@@ -129,15 +128,15 @@ export const useApi = () => {
     return newData;
   };
 
-  const removeTodoById = (todoId: ID): TodoModel | undefined => {
+  const removeTodoById = (todoId: ID, data?: typeof database.todos): TodoModel | undefined => {
     const existingTodo = database.todos[todoId];
     if (!existingTodo) return undefined;
 
-    // for (const innerTodoId of existingTodo.items) {
-    //   removeTodoById(innerTodoId);
-    // }
+    const buffer = JSON.parse(JSON.stringify(data || database.todos));
 
-    const buffer = JSON.parse(JSON.stringify(database.todos));
+    for (const innerTodoId of existingTodo.items) {
+      removeTodoById(innerTodoId, buffer);
+    }
     delete buffer[todoId];
 
     setDatabase({
